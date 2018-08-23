@@ -39,7 +39,10 @@ class People:
         for j in range(self.dimensions.length):
             ch = self.board.matrix[self.point.x + j][self.point.y + self.dimensions.breadth + unit - 1]
             if ch == marioChar:
-                self.board.mario.die()
+                if self.__class__.__name__ == 'China' and j == 0:
+                    pass
+                else: 
+                    self.board.mario.die()
             for i in badChar:
                 if i==ch:
                     return False

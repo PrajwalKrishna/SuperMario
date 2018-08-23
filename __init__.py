@@ -1,4 +1,8 @@
 from status import *
+from colorama import init
+
+init()
+
 
 status = Status()
-level = Level(status._level * 100,status)
+status.makeGame()

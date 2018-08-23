@@ -85,10 +85,9 @@ def alarmHandler(signum, frame):
     raise AlarmException
 
 
-def getInput(timeout=0.5):
+def getInput(timeout=0.4):
     import signal
     signal.signal(signal.SIGALRM, alarmHandler)
-    #signal.alarm(timeout)
     signal.setitimer(signal.ITIMER_REAL, timeout)
     try:
         text = _getch()

@@ -10,11 +10,13 @@ class Board:
         self.allEnemies = []
         self.status = status
         matrix = []
-        for i in range(0,length):
-            matrix.append(['.']*breadth)
-            self.matrix = matrix
-        for i in range(0,breadth):
-            self.matrix[FLOOR][i]='-'
+        ch = identifier['board']
+        for i in range(0,FLOOR):
+            matrix.append([ch] * breadth)
+        ch2 = identifier['brick']
+        for j in range(FLOOR,length):
+            matrix.append([ch2] * breadth)    
+        self.matrix = matrix
 
     def current(self,point,shape,dimensions):
             shape = [["" for i in range(dimensions.breadth)]for j in range(dimensions.length)]
