@@ -16,8 +16,6 @@ This **README** file contains :
 About The Game
 -------------
 
->**Bomberman** (ボンバーマン Bonbāman, also known as Dyna Blaster in Europe) is a strategic, maze-based video game franchise originally developed by Hudson Soft and currently owned by ***Konami***. The original game was published in 1983 and new games have been published at irregular intervals ever since. Today, Bomberman has featured in over 70 different games on numerous platforms.
->
 >**Super Mario Bros** is a platform video game developed and published by **Nintendo**. The successor to the 1983 arcade game, Mario Bros., it was released in Japan in 1985 for the Famicom, and in North America and Europe for the Nintendo Entertainment System (NES) in 1985 and 1987 respectively. Players control Mario,they must traverse side-scrolling stages while avoiding hazards such as enemies and pits.
 
 For more information click [here](https://en.wikipedia.org/wiki/Super_Mario_Bros.).
@@ -69,7 +67,7 @@ Requirements:
  * [board.py](./board.py)
  * [status.py](./status.py)
  * [hurdles.py](./hurdles.py)
- * [main.py](./main.py)
+ * [obstacles.py](./obstacles.py)
  * [background.py](./background.py)
  * [requirements.txt](./requirements.txt)
  * [README.md](./README.md)
@@ -78,4 +76,4 @@ Requirements:
 
 _______________
 
-### Prajwal Krishna
+#### Prajwal Krishna Maitin
