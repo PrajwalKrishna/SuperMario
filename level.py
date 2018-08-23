@@ -12,14 +12,19 @@ import colorama
 class Level:
     '''Making of level'''
     def __init__(self,breadth,status):
+        if(not status._level % 3):
+            identifier['board'] = '\033[1;96m~\033[22;39m'
+        else:
+            identifier['board'] = ' '
         self.board = Board(LENGTH,breadth,status)
         self.status = status
         self.offset = 0
         self.breadth = breadth
 
         #Generate random background
-        for i in range(randint(breadth//20,breadth//16)):
-            cloud = Cloud(self.board)
+        if(status._level % 3):
+            for i in range(randint(breadth//20,breadth//16)):
+                cloud = Cloud(self.board)
         for i in range(randint(breadth//15,breadth//10)):
             bush = Bush(self.board)
         self.display()
