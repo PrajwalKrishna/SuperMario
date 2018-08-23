@@ -18,7 +18,7 @@ class Coins:
 
     def check(self):
         if self.board.matrix[self.point.x][self.point.y] == identifier['mario']:
-            self.board.addCoin()
+            self.board.status.addCoin()
             self.removeCoin()
 
     def restore(self):
@@ -38,13 +38,3 @@ def coinRow(point,dimensions,board):
     for i in range(dimensions.length):
         for j in range(dimensions.breadth):
             Coins(Point(point.x + i,point.y + j),board)
-
-if __name__ == "__main__":
-    from board import *
-    board = Board(26,26)
-    board.display(0)
-    coin = Coins(Point(1,2),board)
-    board.display(0)
-    print(board.matrix[1][2])
-    print(identifier['coin'])
-    print(coin.shape[0][0])

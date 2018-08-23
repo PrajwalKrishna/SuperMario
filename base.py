@@ -13,13 +13,13 @@ identifier['mario'] = '\033[46;33m&\033[49;39m'
 identifier['pakistan'] = '\033[41;31m@\033[49;39m'
 identifier['brick'] = '\033[0;33m#\033[49;39m'
 identifier['china'] = '@'
+identifier['valley'] = '\033[31m!\033[39m'
 
 IMP_CHAR = [identifier['pipe'],identifier['mario'],identifier['pakistan'],'_']
-badChar = [identifier['pipe'],identifier['brick'],'-',identifier['pakistan']]
-deadChar = [identifier['pakistan']]
+badChar = [identifier['pipe'],identifier['brick'],'-',identifier['pakistan'],identifier['china']]
+deadChar = [identifier['pakistan'],identifier['china']]
 marioChar = identifier['mario']
 
-allEnemies = []
 
 class Point:
     def __init__(self,x,y):

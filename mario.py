@@ -7,6 +7,7 @@ class Mario(People):
         self.state = 0
         self.air = 0
         self.board.mario = self
+        self.update()
 
     def grow(self):
         '''On eating of weeds'''
@@ -26,7 +27,7 @@ class Mario(People):
         self.state = 2
 
     def die(self):
-        self.board.life -= 1
+        self.board.status._life -= 1
         #self.depricate()
         self.board.update(self.prePoint,self.pre,self.dimensions)
         pass
@@ -58,13 +59,16 @@ class Mario(People):
 
     def gravity(self,unit):
         '''Simulate gravity'''
+        if(self.point.x > FLOOR - 1):
+            self.die()
+            return
         for i in range(self.point.y,self.point.y + self.dimensions.breadth):
             arr = self.board.matrix[self.point.x + self.dimensions.length]
             for j in badChar:
                 if arr[i] == j:
                     #logic to check for killing enemy
                     if j in deadChar:
-                        enemiesList = allEnemies
+                        enemiesList = self.board.allEnemies
                         for k in enemiesList:
                             if(k.point.x <= self.point.x + self.dimensions.length < k.point.x + k.dimensions.length):
                                 if(k.point.y <= i < k.point.y + k.dimensions.breadth):

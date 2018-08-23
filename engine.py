@@ -17,24 +17,10 @@ board.display(OFFSET)
 
 for i in range(randint(4,7)):
     cloud = Cloud(board)
-    cloud.draw()
 for i in range(randint(3,6)):
     bush = Bush(board)
-    bush.draw()
 
 mario = Mario(FLOOR-3,5,board)
-mario.update()
-board.display(OFFSET)
-
-
-enemy = Pakistan(FLOOR-2,26,board);
-enemy.update()
-board.display(OFFSET)
-
-print(enemy.move_right(1))
-print(enemy.move_right(2))
-print(enemy.move_right(3))
-print(enemy.move_left(6))
 board.display(OFFSET)
 
 
@@ -44,14 +30,18 @@ board.display(OFFSET)
 twoPipes = TwoPipes(130,board)
 board.display(OFFSET)
 
-brickJungle = BrickJungle(10,board)
+brickJungle = BrickJungle(150,board)
 board.display(OFFSET)
+
+BossPipes = BossPipes(10,board)
+board.display(OFFSET)
+
 
 while True:
     board.updateTime()
     for i in USED_COINS:
         i.restore()
-    for i in allEnemies:
+    for i in board.allEnemies:
         i.selfMove(1)
     mario.gravity(2)
     if(mario.point.y - OFFSET > 50):

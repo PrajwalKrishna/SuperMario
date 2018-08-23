@@ -23,7 +23,7 @@ class Pipe(Obstacle):
 class Brick(Obstacle):
     '''Bricks of all kind'''
     def __init__(self,point,dimensions,board):
-        shape = [list([identifier['brick']] * dimensions.breadth)]*dimensions.length
+        shape = [list([identifier['brick']] * dimensions.breadth)] * dimensions.length
         Obstacle.__init__(self,point,shape,dimensions,board)
         self.pre = self.board.current(self.point,self.shape,self.dimensions)
         self.health = 1
@@ -37,4 +37,8 @@ class Brick(Obstacle):
         self.health = 5
 
 class Valley(Obstacle):
-    pass
+    def __init__(self,start,breadth,board):
+        '''Pit or valley'''
+        dimensions = Dimension(5,breadth)
+        shape = [list([identifier['valley']] * dimensions.breadth)] * dimensions.length
+        Obstacle.__init__(self,Point(FLOOR,start),shape,dimensions,board)

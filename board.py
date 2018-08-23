@@ -1,20 +1,14 @@
 '''This creates and base board'''
 from os import system
 from base import *
-from time import time
 
 class Board:
-    def __init__(self,length,breadth):
+    def __init__(self,length,breadth,status):
         self.length = length
         self.breadth = breadth
-        self.life = 3
-        self.level = 1
-        self._coins = 0
-        self._score = 0
-        self.time = 0
         self.mario = None
-        self._kills = 0
-        self.beginTime = time()*10
+        self.allEnemies = []
+        self.status = status
         matrix = []
         for i in range(0,length):
             matrix.append(['.']*breadth)
@@ -22,26 +16,6 @@ class Board:
         for i in range(0,breadth):
             self.matrix[FLOOR][i]='-'
 
-    def mario(self,mario):
-        self.mario = mario
-
-    def addCoin(self):
-        self._coins += 1
-        self._score += 1000
-        if self._coins == 100:
-            self._coins = 0
-            self.life += 1
-
-    def updateTime(self):
-        pre = self.time
-        self.time = int(time()*10 - self.beginTime)
-        self._score += (self.time - pre)*10
-
-    def addScore(self,point):
-        self._score += point
-
-    def addKill(self):
-        self._kills += 1
     def current(self,point,shape,dimensions):
             shape = [["" for i in range(dimensions.breadth)]for j in range(dimensions.length)]
             for i in range(0,dimensions.length):
@@ -56,12 +30,11 @@ class Board:
 
     def display(self,offset):
         system('clear')
-        print('Level = ',self.level,"\tScore = ",self._score,'\t Coins = ',self._coins,'\t Lives = ',self.life,'\t Time = ',self.time,'\t Kills = ',self._kills)
+        self.status.printStatus()
         for i in self.matrix:
             for j in i[offset:offset + FRAME_BREADTH]:
                 print(j,end ='')
             print('')
-            #print(''.join(i[offset:offset + FRAME_BREADTH]))
 
 
 if __name__ == '__main__':

@@ -48,11 +48,13 @@ class People:
         return True
 
     def die(self):
+        self.board.status.addKill()
         self.board.update(self.prePoint,self.pre,self.dimensions)
-        allEnemies.remove(self)
+        self.board.allEnemies.remove(self)
         if(self.__class__.__name__ == 'Pakistan'):
-            self.board.addScore(10000)
-            self.board.addKill()
+            self.board.status.addScore(10000)
+        else:
+            self.board.status.addScore(900000)
 
     def selfMove(self,unit):
         if(self.direction == 'R'):
