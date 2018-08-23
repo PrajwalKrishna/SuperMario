@@ -43,6 +43,8 @@ class Level:
         for i in COINS:
             i.check()
         self.display()
+        if self.breadth - self.mario.point.y < 10:
+            self.board.status.levelUp()
 
     def display(self):
         self.board.status.updateTime()
@@ -68,7 +70,7 @@ class Level:
     def generateHurdles(self):
         hurdles = HURDLES
         options = len(hurdles)
-        x = 25
+        x = 20
         while( x < self.breadth):
             option = randint(0,options-1)
             if hurdles[option][0] + x < self.breadth:
@@ -77,8 +79,3 @@ class Level:
                 x += randint(10,20)
             else:
                 break
-
-if __name__ == '__main__':
-    from status import *
-    status = Status()
-    level = Level(300,status)

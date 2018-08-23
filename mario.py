@@ -28,9 +28,8 @@ class Mario(People):
 
     def die(self):
         self.board.status._life -= 1
-        #self.depricate()
         self.board.update(self.prePoint,self.pre,self.dimensions)
-        pass
+        self.board.status.die()
 
     def jump(self,unit):
         '''Under Development'''

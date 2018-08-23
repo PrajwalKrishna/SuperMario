@@ -61,7 +61,7 @@ class BrickJungle(Hurdle):
         obstacles.append(Brick(Point(15,start + 8),Dimension(2,5),board))
         obstacles.append(Brick(Point(11,start + 16),Dimension(2,5),board))
         obstacles.append(Brick(Point(5,start + 21),Dimension(2,11),board))
-        obstacles.append(Brick(Point(21,start + 21),Dimension(2,11),board))
+        obstacles.append(Brick(Point(19,start + 21),Dimension(2,11),board))
         obstacles.append(Valley(start + 19,15,board))
         obstacles.append(Brick(Point(11,start + 32),Dimension(2,5),board))
         obstacles.append(Brick(Point(15,start + 40),Dimension(2,5),board))
