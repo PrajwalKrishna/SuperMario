@@ -7,7 +7,6 @@ MAX_JUMP = 14
 
 
 identifier = {}
-#identifier['board'] = '\033[2;40m' + ' ' + '\033[49;22m'
 identifier['board'] = ' '
 identifier['coin'] = '\033[1;93m' + '$' + '\033[39;22m'
 identifier['pipe'] = '\033[0;42;32m'+'*' + '\033[22;49;39m'

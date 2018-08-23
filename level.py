@@ -7,7 +7,7 @@ from user import *
 from hurdles import *
 from coins import *
 import colorama
-
+from castle import *
 
 class Level:
     '''Making of level'''
@@ -76,11 +76,13 @@ class Level:
         hurdles = HURDLES
         options = len(hurdles)
         x = 20
-        while( x < self.breadth):
+        while( x < self.breadth - 35 ):
             option = randint(0,options-1)
-            if hurdles[option][0] + x < self.breadth:
+            if hurdles[option][0] + x < self.breadth - 35:
                 hurdles[option][1](x,self.board)
                 x += hurdles[option][0]
                 x += randint(10,20)
             else:
                 break
+
+        castle = Castle(self.breadth - 33,self.board)        

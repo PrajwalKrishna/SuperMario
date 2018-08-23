@@ -13,7 +13,7 @@ class Status:
         self._beginTime = time()
 
     def makeGame(self):
-        level = Level(self._level * 100 ,self)
+        level = Level(self._level * 100  ,self)
 
     def addCoin(self):
         self._coins += 1
