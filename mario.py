@@ -63,6 +63,9 @@ class Mario(People):
             return
         for i in range(self.point.y,self.point.y + self.dimensions.breadth):
             arr = self.board.matrix[self.point.x + self.dimensions.length]
+            if arr[i] == springChar:
+                self.jump(MAX_JUMP)
+                return
             for j in badChar:
                 if arr[i] == j:
                     #logic to check for killing enemy

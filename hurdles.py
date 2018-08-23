@@ -1,6 +1,7 @@
 from obstacles import *
 from enemy import *
 from coins import *
+from spring import *
 
 HURDLES = []
 
@@ -88,3 +89,18 @@ class BossPipes(Hurdle):
         self.load()
 
 HURDLES.append([36,BossPipes])
+
+class SpringPipe(Hurdle):
+    '''Springs'''
+    def __init__(self,start,board):
+        width = 26
+        obstacles = []
+        obstacles.append(Spring(start + 3,6,board))
+        coinRow(Point(8,start + 6),Dimension(10,1),board)
+        enemy = []
+        enemy.append(Pakistan(FLOOR - 2,start,board))
+        enemy.append(Pakistan(FLOOR - 2,start + 13,board))
+        Hurdle.__init__(self,start,width,obstacles,enemy,board)
+        self.load()
+
+HURDLES.append([26,SpringPipe])

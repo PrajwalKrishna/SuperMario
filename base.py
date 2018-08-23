@@ -23,12 +23,13 @@ identifier['bushSpace'] = '\033[1;92m+\033[22;39m'
 identifier['bushSlash'] = '\033[1;92m/\033[22;39m'
 identifier['bushBackSlash'] = '\033[1;92m\\\033[22;39m'
 identifier['bushPipe'] = '\033[1;92m|\033[22;39m'
+identifier['spring'] = '\033[1;91m%\033[22;39m'
 
 IMP_CHAR = [identifier['pipe'],identifier['mario'],identifier['pakistan']]
 badChar = [identifier['pipe'],identifier['brick'],identifier['pakistan'],identifier['china']]
 deadChar = [identifier['pakistan'],identifier['china']]
 marioChar = identifier['mario']
-
+springChar = identifier['spring']
 
 class Point:
     def __init__(self,x,y):
