@@ -5,7 +5,7 @@ class Status:
     '''Store game Status'''
     def __init__(self):
         self._life = 3
-        self._level = 3
+        self._level = 1
         self._coins = 0
         self._score = 0
         self._time = 0

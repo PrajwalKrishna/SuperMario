@@ -18,10 +18,10 @@ class China(People):
 
     def selfMove(self,unit):
         if 20 > self.point.y - self.board.mario.point.y > 0:
-            if not self.move_left(unit):
+            if not self.move_left(2 * unit):
                 self.move_right( 2 * unit)
         elif 20 > self.board.mario.point.y - self.point.y > 0:
-            if not self.move_right(unit):
+            if not self.move_right(2 * unit):
                 self.move_left(2 * unit)
         else:
             People.selfMove(self,2 * unit)

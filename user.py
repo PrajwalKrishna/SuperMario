@@ -1,28 +1,3 @@
-
-'''
-    Allow certain inputs and translate to easier to read format
-    UP : 0
-    DOWN : 1
-    LEFT : 2
-    RIGHT : 3
-    BOMB : 4
-'''
-
-# key presses
-UP, DOWN, LEFT, RIGHT, BOMB, QUIT = range(6)
-DIR = [UP, DOWN, LEFT, RIGHT]
-INVALID = -1
-
-# allowed inputs
-_allowed_inputs = {
-    UP      : ['w', '\x1b[A'], \
-    DOWN    : ['s', '\x1b[B'], \
-    LEFT    : ['a', '\x1b[D'], \
-    RIGHT   : ['d', '\x1b[C'], \
-    BOMB    : ['b'],           \
-    QUIT    : ['q']
-}
-
 def get_key(key):
     for x in _allowed_inputs:
         if key in _allowed_inputs[x]:
