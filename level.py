@@ -48,7 +48,7 @@ class Level:
         for i in COINS:
             i.check()
         self.display()
-        if self.breadth - self.mario.point.y < 10:
+        if self.breadth - self.mario.point.y < 16:
             self.board.status.levelUp()
 
     def display(self):
@@ -85,4 +85,4 @@ class Level:
             else:
                 break
 
-        castle = Castle(self.breadth - 33,self.board)        
+        castle = Castle(self.breadth - 33,self.board)
