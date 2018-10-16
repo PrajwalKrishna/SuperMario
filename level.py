@@ -48,7 +48,7 @@ class Level:
         for i in COINS:
             i.check()
         self.display()
-        if self.breadth - self.mario.point.y < 16:
+        if self.breadth - self.mario.point.y < 20:
             self.board.status.levelUp()
 
     def display(self):
