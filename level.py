@@ -1,7 +1,7 @@
 '''Level maker'''
 #from background import *
 from random import randint
-from user import getInput
+from user import get_input
 from board import Board
 from background import Cloud, Bush
 from mario import Mario
@@ -69,7 +69,7 @@ class Level:
 
     def user_response(self):
         '''Get user input and react accordingly'''
-        ch = getInput()
+        ch = get_input()
         if ch == 'a':
             self.mario.move_left(1)
         elif ch == 'd':

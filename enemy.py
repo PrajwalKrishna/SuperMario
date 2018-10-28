@@ -2,21 +2,21 @@
 from people import People
 from base import Point, Dimension, IDENTIFIER
 
-class Pakistan(People):
+class SlaveEnemy(People):
     '''Small and weak Villans'''
 
     def __init__(self, x, y, board):
-        ch = IDENTIFIER['pakistan']
+        ch = IDENTIFIER['SlaveEnemy']
         shape = [[ch, ch], [ch, ch]]
         board.all_enemies.append(self)
         People.__init__(self, Point(x, y), 1, shape, Dimension(2, 2), board)
 
 
-class China(People):
+class BossEnemy(People):
     '''Weak and smart enemy'''
 
     def __init__(self, x, y, board):
-        ch = IDENTIFIER['china']
+        ch = IDENTIFIER['BossEnemy']
         shape = [[ch, ch, ch], [ch, ch, ch], [ch, ch, ch]]
         board.all_enemies.append(self)
         People.__init__(self, Point(x, y), 1, shape, Dimension(3, 3), board)

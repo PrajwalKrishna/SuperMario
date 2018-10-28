@@ -37,7 +37,7 @@ class Mario(People):
         self.board.status.die()
 
     def jump(self, unit):
-        '''Under Development'''
+        '''Logic of Development'''
         if self.air + unit > MAX_JUMP:
             return False
         if self.point.x - unit < 0:

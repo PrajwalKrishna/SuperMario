@@ -46,7 +46,7 @@ class People:
             ch = self.board.matrix[self.point.x +
                                    j][self.point.y + self.dimensions.breadth + unit - 1]
             if ch == MARIO_CHAR:
-                if self.__class__.__name__ == 'China' and j == 0:
+                if self.__class__.__name__ == 'BossEnemy' and j == 0:
                     pass
                 else:
                     self.board.mario.die()
@@ -62,8 +62,8 @@ class People:
         self.board.status.add_kill()
         self.board.update(self.pre_point, self.pre, self.dimensions)
         self.board.all_enemies.remove(self)
-        if self.__class__.__name__ == 'Pakistan':
-            self.board.status.add_score(10000)
+        if self.__class__.__name__ == 'SlaveEnemy':
+            self.board.status.add_score(100000)
         else:
             self.board.status.add_score(900000)
 

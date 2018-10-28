@@ -52,15 +52,15 @@ class AlarmException(Exception):
     pass
 
 
-def alarmHandler(signum, frame):
+def alarm_handler(signum, frame):
     '''This function handles alarm'''
     raise AlarmException
 
 
-def getInput(timeout=0.4):
+def get_input(timeout=0.4):
     '''Function to take user inputs'''
     import signal
-    signal.signal(signal.SIGALRM, alarmHandler)
+    signal.signal(signal.SIGALRM, alarm_handler)
     signal.setitimer(signal.ITIMER_REAL, timeout)
     try:
         text = _GETCH()

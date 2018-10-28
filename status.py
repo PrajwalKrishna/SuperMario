@@ -43,7 +43,6 @@ class Status:
 
     def die(self):
         '''Restarts games on death of mario'''
-        # Game over
         self.make_game()
 
     def level_up(self):
