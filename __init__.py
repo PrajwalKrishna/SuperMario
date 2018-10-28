@@ -1,8 +1,9 @@
-from status import *
+'''Stater of game'''
 from colorama import init
+from status import Status
 
 init()
 
 
-status = Status()
-status.makeGame()
+STATUS = Status()
+STATUS.make_game()
