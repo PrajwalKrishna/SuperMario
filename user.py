@@ -1,8 +1,4 @@
-def get_key(key):
-    for x in _allowed_inputs:
-        if key in _allowed_inputs[x]:
-            return x
-    return False
+'''This module handles user inputs'''
 
 # Gets a single character from standard input.  Does not echo to the screen.
 class _Getch:
@@ -48,7 +44,7 @@ class _getChWindows:
         return msvcrt.getch()
 
 
-_getch = _Getch()
+_GETCH = _Getch()
 
 
 class AlarmException(Exception):
@@ -57,15 +53,17 @@ class AlarmException(Exception):
 
 
 def alarmHandler(signum, frame):
+    '''This function handles alarm'''
     raise AlarmException
 
 
 def getInput(timeout=0.4):
+    '''Function to take user inputs'''
     import signal
     signal.signal(signal.SIGALRM, alarmHandler)
     signal.setitimer(signal.ITIMER_REAL, timeout)
     try:
-        text = _getch()
+        text = _GETCH()
         signal.alarm(0)
         return text
     except AlarmException:
