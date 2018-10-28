@@ -45,12 +45,11 @@ class Level:
         self.mario.gravity(2)
         for i in USED_COINS:
             i.restore()
+
         for i in self.board.all_enemies:
             i.self_move(1)
         self.move_screen()
         self.user_response()
-        for i in COINS:
-            i.check()
         self.display()
         if self.breadth - self.mario.point.y < 20:
             self.board.status.level_up()

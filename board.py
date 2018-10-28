@@ -1,7 +1,7 @@
 '''This creates and base board'''
 from os import system
 from base import IDENTIFIER, FLOOR, FRAME_BREADTH
-
+from coins import COINDICT, COINS
 
 class Board:
     '''Board class'''
@@ -29,11 +29,17 @@ class Board:
                 shape[i][j] = self.matrix[point.x + i][point.y + j]
         return shape
 
-    def update(self, point, shape, dimensions):
-        '''Change board'''
-        for i in range(0, dimensions.length):
-            for j in range(0, dimensions.breadth):
-                self.matrix[point.x + i][point.y + j] = shape[i][j]
+    def update(self,point,shape,dimensions):
+            for i in range(0,dimensions.length):
+                for j in range(0,dimensions.breadth):
+                    if self.matrix[point.x + i][point.y + j] == IDENTIFIER['coin'] and shape[i][j] == IDENTIFIER['mario']:
+                        try:
+                            coinIndex = COINDICT[point.y + j][point.x + i]
+                            COINS[coinIndex].check()
+                        except Exception as e:
+                            #This exists to capture any issues that can occur because the board doesn't update fast enough
+                            pass
+                    self.matrix[point.x + i][point.y + j] = shape[i][j]
 
     def display(self, offset):
         '''Renders boards frame by frame'''
