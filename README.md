@@ -29,6 +29,8 @@ For more information click [here](https://en.wikipedia.org/wiki/Super_Mario_Bros
 - Running the program is easy
 	- `./__init__.py`
 - Zoom in or out for proper viewing refer ground to sizing
+### NOTE: Python Terminal SuperMario will not run on Windows environments as Windows does not support `signal.SIGALRM` however the code should run properly on a Cygwin terminal.
+
 
 ## Controls
 
