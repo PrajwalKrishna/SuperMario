@@ -21,7 +21,7 @@ class Board:
         self.matrix = matrix
 
     def current(self, point, shape, dimensions):
-        '''Makes and handles current board'''
+        '''Returns current board used by functions to get current board'''
         shape = [["" for i in range(dimensions.breadth)]
                  for j in range(dimensions.length)]
         for i in range(0, dimensions.length):
